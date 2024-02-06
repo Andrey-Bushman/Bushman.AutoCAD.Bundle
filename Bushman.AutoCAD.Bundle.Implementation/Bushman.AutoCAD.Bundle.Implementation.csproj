@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F4C0A40-C1C5-4DE0-96CF-1C3E1F2B9A22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bushman.AutoCAD.Bundle.Implementation</RootNamespace>
+    <AssemblyName>Bushman.AutoCAD.Bundle.Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\ApplicationPackage.cs" />
+    <Compile Include="Models\AssemblyMapping.cs" />
+    <Compile Include="Models\AssemblyMappingFolder.cs" />
+    <Compile Include="Models\AssemblyMappingItems.cs" />
+    <Compile Include="Services\BundleFactory.cs" />
+    <Compile Include="Models\Command.cs" />
+    <Compile Include="Models\CommandGroup.cs" />
+    <Compile Include="Models\CompanyDetails.cs" />
+    <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\ComponentEntry.cs" />
+    <Compile Include="Models\Components.cs" />
+    <Compile Include="Models\DependentBundle.cs" />
+    <Compile Include="Models\EnvironmentVariable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\RegistryEntry.cs" />
+    <Compile Include="Models\RuntimeRequirements.cs" />
+    <Compile Include="Models\SystemVariable.cs" />
+    <Compile Include="Services\FactoryProvider.cs" />
+    <Compile Include="Services\ValidationFactory.cs" />
+    <Compile Include="Validation\PackageValidationResult.cs" />
+    <Compile Include="Validation\PackageValidator.cs" />
+    <Compile Include="Validation\RulesProvider.cs" />
+    <Compile Include="Validation\Rule.cs" />
+    <Compile Include="Validation\RuleValidationResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bushman.AutoCAD.Bundle.Abstraction\Bushman.AutoCAD.Bundle.Abstraction.csproj">
+      <Project>{41b12ca1-8775-4eb3-b140-1739f4730cd3}</Project>
+      <Name>Bushman.AutoCAD.Bundle.Abstraction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
